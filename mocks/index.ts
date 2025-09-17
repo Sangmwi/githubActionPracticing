@@ -1,0 +1,19 @@
+
+export async function initMocks() {
+    // 개발 환경이 아니라면 실행 X
+    if (process.env.NODE_ENV !== "development") return;
+    if (typeof window === "undefined") {
+      // 서버 사이드
+      const { server } = await import("./server");
+      server.listen({
+        onUnhandledRequest: 'bypass', // 처리되지 않은 요청은 그냥 통과
+      });
+    } else {
+      // 클라이언트 사이드
+      const { worker } = await import("./browser");
+      await worker.start({
+        onUnhandledRequest: 'bypass', // 처리되지 않은 요청은 그냥 통과
+        quiet: true, // 경고 메시지 숨기기
+      });
+    }
+  }
