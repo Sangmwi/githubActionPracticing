@@ -46,3 +46,18 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+
+# jest
+coverage/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# husky
+.husky/
+.vercel
+
+# Sentry Config File
+.env.sentry-build-plugin
