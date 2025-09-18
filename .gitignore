@@ -50,10 +50,12 @@ node_modules/
 
 # jest
 coverage/
+.jest-cache/
 test-results/
 playwright-report/
 blob-report/
 playwright/.cache/
+playwright-cache/
 
 # husky
 .husky/
