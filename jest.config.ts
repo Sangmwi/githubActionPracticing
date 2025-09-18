@@ -12,6 +12,8 @@ const config: Config = {
   testEnvironment: 'jest-fixed-jsdom',
   // 테스트 전에 실행할 설정 파일을 지정
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  // Windows에서 캐시 디렉토리 권한 문제 해결
+  cacheDirectory: '<rootDir>/.jest-cache',
 }
  
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
